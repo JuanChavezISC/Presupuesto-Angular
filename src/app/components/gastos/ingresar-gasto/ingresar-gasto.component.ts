@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PresupuestoService } from '../../../services/presupuesto.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-ingresar-gasto',
   templateUrl: './ingresar-gasto.component.html',
@@ -13,7 +13,7 @@ export class IngresarGastoComponent implements OnInit{
   formularioIncorrecto: boolean;
   textIncorrecto: string;
 
-  constructor(private _presupuestoService : PresupuestoService){
+  constructor(private _presupuestoService : PresupuestoService, private router: Router){
     this.nombreGasto = '';
     this.cantidad = 0;
     this.formularioIncorrecto = false;
@@ -53,5 +53,9 @@ export class IngresarGastoComponent implements OnInit{
       this.nombreGasto = '';
       this.cantidad = 0;
     }
+
+  }
+  verResumen(){
+    this.router.navigate(['/resumen']);
   }
 }
