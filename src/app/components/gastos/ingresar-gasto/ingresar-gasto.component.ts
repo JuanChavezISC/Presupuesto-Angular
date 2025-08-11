@@ -56,6 +56,7 @@ export class IngresarGastoComponent implements OnInit{
 
   }
   verResumen(){
+    this._presupuestoService.enviarListaGastos();
     this.router.navigate(['/resumen']);
   }
 }

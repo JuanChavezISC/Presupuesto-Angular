@@ -27,8 +27,7 @@ private listaGastos: any[ ] = [];
     this.gastos$.next(gasto);
   }
 
-  enviarListaGastos(gasto: any){
-    this.restante = this.restante - gasto.cantidad;
+  enviarListaGastos(){
     this.gasto2$.next(this.listaGastos);
   }
 
